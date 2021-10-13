@@ -1,4 +1,5 @@
 #!/bin/sh
-sudo cp -r include/. /usr/include
-sudo cp -r lib/. /usr/lib
-echo "Environment has been set up."
+MYDIR=`dirname $0`
+sudo cp -r ${MYDIR}/include/. /usr/include
+sudo cp -r ${MYDIR}/lib/. /usr/lib
+echo "Environment has been set up from ${MYDIR}."
