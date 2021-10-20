@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  	<head>
+	    <meta charset="utf-8">
+	    <title>home</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+
+	    <!-- Bootstrap core CSS -->
+	    <link href="css/bootstrap-min.css" rel="stylesheet">
+		
+		<!-- Font Awesome -->
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- Simplify -->
+		<link href="css/simplify.min.css" rel="stylesheet">
+  	</head>
+
+  	<body class="overflow-hidden">
+		<div class="wrapper preload">
+			<div class="main-container">
+				<div class="padding-md">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="page-title"><a href="#" class="menu_1"><i class="fa fa-bars"></i></a> HMI SCREEN LIST </div>
+						</div>
+						<div class="col-sm-6 text-right text-left-sm p-top-sm">
+							<div class="btn-group">
+							  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							    Quick Select<span class="caret"></span>
+							  </button>
+							  <ul id="ScreenQuickSelect" class="dropdown-menu pull-right" role="menu">
+							    <%SCREENDATA%>
+							  </ul>
+							  <script language="javascript" type="text/javascript">
+	var urlmenu = document.getElementById('ScreenQuickSelect');
+    urlmenu.onchange = function() {
+		window.open( this.options[ this.selectedIndex ].value, '_blank');
+    }
+ </script>
+							</div>
+						</div>
+					</div>
+                    <hr/>
+					<div class="row">
+						<%SCREENLISTDATA%>
+					</div>
+				</div><!-- ./padding-md -->
+			</div><!-- /main-container -->
+		</div><!-- /wrapper -->
+        <div class="footer">
+        	<span>Copyright © 2015-2018 Function Block Service Runtime (FBSRT) BY YY AUTOMATION TECHNOLOGY LTD</span>
+        </div><!-- /footer -->
+		<a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
+		
+		<!-- Jquery -->
+		<script src="js/jquery-2.1.3.min.js"></script>
+
+		<!-- Bootstrap -->
+	    <script src="js/bootstrap.min.js"></script>
+
+		<!-- Slimscroll -->
+		<script src='js/jquery.slimscroll.min.js'></script>
+		
+		<!-- Simplify -->
+		<script src="js/simplify.js"></script>
+        
+		<!-- 拖拽 -->
+        <script>
+        function handleDragStart(e) {
+        this.style.opacity = '0.4';
+        dragSrcEl = this;
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/html', this.innerHTML);
+        }
+        function handleDragEnter(e) {
+        this.classList.add('over');
+        }
+        function handleDragLeave(e) {
+        this.classList.remove('over');
+        }
+        function handleDragOver(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        }
+        return false;
+        }
+        function handleDrop(e) {
+        if (dragSrcEl != this) {
+            dragSrcEl.innerHTML = this.innerHTML;
+            this.innerHTML = e.dataTransfer.getData('text/html');
+        }
+        return false;
+       }
+       function handleDragEnd(e) {
+        this.style.opacity = '1';
+        [].forEach.call(divs, function(d) {
+            d.classList.remove('over');
+        });
+    }
+       var divs = document.querySelectorAll('.col-md-3');
+       [].forEach.call(divs, function(d) {
+        d.addEventListener('dragstart', handleDragStart, false);
+        d.addEventListener('dragenter', handleDragEnter, false);
+        d.addEventListener('dragover', handleDragOver, false);
+        d.addEventListener('dragleave', handleDragLeave, false);
+        d.addEventListener('drop', handleDrop, false);
+        d.addEventListener('dragend', handleDragEnd, false);
+    });
+       </script>
+  	</body>
+</html>

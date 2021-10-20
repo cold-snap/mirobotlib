@@ -1,0 +1,489 @@
+ 
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id='Description'>SCADA/HMI Panel</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../Lib/jqwidgets/styles/jqx.base.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../../../../Lib/styles/css/dragresize.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../Lib/styles/css/popup.css" />
+	<link rel="stylesheet" type="text/css" href="../../../../Lib/styles/font-awesome/css/font-awesome.min.css" />
+    <script type="text/javascript" src="../../../../Lib/scripts/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../../../../Lib/scripts/screenws.js"></script>
+	<script type="text/javascript" src="../../../../Lib/scripts/dragresize.js"></script>
+	<script type="text/javascript" src="../../../../Lib/jqwidgets/jqxcore.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../Lib/styles/css/colorpicker.css" /><script type="text/javascript" src="../../../../Lib/scripts/colorpicker.js"></script><link rel="stylesheet" type="text/css" href="../../../../Lib/styles/css/colorpicker.css" /><script type="text/javascript" src="../../../../Lib/scripts/colorpicker.js"></script>
+    <style type="text/css">
+	   div.none { pointer-events: none; }
+	    
+		
+        @font-face {
+          font-family: 'Electronic digital font ';
+          src: url('../../../../Lib/css/font-awesome/fonts/displayfreetfb.otf');
+          font-weight: 900;
+          font-style: normal;
+        }
+        #panel2_TL1_c span { font-family: 'Electronic digital font '; font-size: 32px; }
+        .fr {float: right;}
+        .fl {float: left;}
+        .clearfix {clear: both;}
+        /* ! wrap */
+        .mid-top {width: 800px;height: 180px;}
+        .mid-tm {width: 200px; height: 180px;margin: 0 auto;border-left: 2px solid black;border-right: 2px solid black;}
+        .mid-mid {width: 800px;height: 204px;}
+        .mid-mm {width: 200px;height: 200px;margin: 0 auto; }
+        .mid-ml {width: 300px;height: 200px;border-top: 2px solid black;border-bottom: 2px solid black;}
+        /*! Light */
+        .trafficlight {
+           background-color: #000;
+           box-shadow: 0 0 5px rgba(0,0,0, .8);
+           overflow: hidden;   
+        }
+        .trafficlight-v {padding: 0 0 4px;width: 40px;margin: 10px 0;}
+        .trafficlight-h {width: 106px;height: 40px; }
+        .top-left {margin-top:10px; margin-left: 47px;}
+        .top-right {margin-top: 47px;margin-right: 10px; }
+        .bot-left {margin-top: 47px;margin-left: 10px;}
+        .bot-right {margin-top: 30px;margin-right: 47px;}
+        .board-top-left {margin-top: 60px;margin-left: 60px;}
+        .board-top-right {margin-top: 60px;margin-right: 140px; width: 40px;height: 80px;background-color: #000;}
+        .board-bot-left {margin-top: 60px;margin-left: 140px; width: 40px;height: 80px;background-color: #000;}
+        .board-bot-right {margin: 10px;margin-right: 60px;}
+        .trafficlight span {
+           border-radius: 50px;
+           display: block;
+           height: 30px;
+           width: 30px;
+        }
+        .span-v {margin: 4px auto 0;}
+        .span-h {margin: 5px 0px 5px 4px; float: left;}
+        /*! Light colours */
+        .red    { background-color: red; }
+        .orange { background-color: #ffff00; }
+        .green  { background-color: #08F608; }
+       /*! Active states */
+	   span.span-h.red { opacity: 1 }
+	   span.span-h.orange { opacity: 1 }
+	   span.span-h.green { opacity: 1 }
+	   span.span-v.red { opacity: 1 }
+	   span.span-v.orange { opacity: 1 }
+	   span.span-v.green { opacity: 1 }
+       .board {width: 80px;height: 40px;background-color: #000;}
+       .board p {width: 40px;font-size: 40px;text-align: center;color: #fff; margin:0 auto; line-height: 40px;}
+       .board-bot-left p {width: 40px;font-size: 40px; text-align:center; color: #fff; margin:0 auto; line-height: 40px;padding: 20px 0;}
+       .board-top-right p {width: 40px;font-size: 40px; text-align:center; color: #fff; margin:0 auto; line-height: 40px;padding: 20px 0;}        
+       .redActive {color:red;}
+       .orangeActive {color: orange;}
+       .greenActive {color: #08F608;}
+       
+    </style>
+    <script type="text/javascript">
+		$(document).ready(function () {
+		    var dragresize = new DragResize('dragresize', {
+                    minWidth: 10,
+                    minHeight: 10,
+                    minLeft: 0,
+                    minTop: 0,
+                    maxLeft: 1200,
+                    maxTop: 800
+               });
+            dragresize.isElement = function(elm) {if (elm.className && elm.className.indexOf('drsElement') > -1) return true;};
+            dragresize.isHandle = function(elm) {if (elm.className && elm.className.indexOf('drsMoveHandle') > -1) return true;};
+            dragresize.ondragfocus = function() {};
+            dragresize.ondragstart = function(isResize) {};
+            dragresize.ondragmove = function(isResize) {};
+            dragresize.ondragend = function(isResize) {};
+            dragresize.apply(document);
+			
+			var idRule = /^[a-zA-Z][a-zA-Z0-9_]*$/;
+			 
+              $("#panel2_c").dblclick(function(event) {
+                   var colorShow = $("#panel2_popup input.background").val().colorDisplay(),
+                       bgColorShow = $("#panel2_popup input.background").val();
+                   $("#panel2_popup input.background").css({ 'color': colorShow, 'background': bgColorShow });
+                   $("#panel2_popup input.background").ColorPicker({
+                      onBeforeShow: function() { $(this).ColorPickerSetColor(this.value); },
+                      onChange: function(hsb, hex, rgb, el) {
+                          var fColor = "#" + hex;
+                          $(el).val(fColor);
+                          $(el).css({ 'background': fColor, 'color': fColor.colorDisplay()});
+                       },
+                      onSubmit: function(hsb, hex, rgb, el) {
+                          $(el).val("#" + hex);
+                          $(el).ColorPickerHide();
+                       },
+                   });
+                   $("#panel2_p h2 span").html("panel2");
+			       $("#panel2_popup input.idName").val("panel2");
+			       $("#panel2_c").blur();
+                   $('#panel2_popup, #fade, #panel2_p').css('display', 'block');
+                   var bval = $("#panel2_c").attr('style').replace(/:/g, ";").replace(/ /g, "").split(";");
+			       for (var i = 0; i < 8; i = i + 2) {
+                      var binputName = bval[i],
+                         binputVal = parseInt(bval[i + 1]);
+                      $('#panel2_popup input.' + binputName).val(binputVal);
+                   };
+               });
+			   $('#panel2_s').click(function(event) {
+                  var msg,
+			          newID = $('#panel2_popup input.idName').val(),
+                      pList = $("#panel2_popup form p [name]"),
+                      pBind = $("#panel2_popup form p select.bind");
+			      if (!idRule.test(newID) || newID == "panel2" ){ 
+			          msg = '<Request Action="WRITE"><PanelComponent id="panel2">' 
+			      }else{
+                      msg = '<Request Action="WRITE"><PanelComponent id="panel2"><PanelParameter Name="id"  Value="' + newID + '" Binding="" />'
+                   };
+                  for (var i = 0; i < pList.length; i++) {
+                      var inputName = $(pList[i]).attr('name'),
+                          inputValue = $(pList[i]).val(),
+                          bindValue = $(pBind[i]).val();
+                      if (inputValue) {
+                          msg += '<PanelParameter Name="' + inputName + '" Value="' + inputValue + '" Binding="' + bindValue + '" />';
+                          if(isNaN(inputValue)) $("#panel2_c").css(inputName, inputValue)
+						  else $("#panel2_c").css(inputName, inputValue + "px");
+                       }
+               };
+              msg += '</PanelComponent></Request>';
+              $('#panel2_popup, #fade, #panel2_p').css('display', 'none' );
+              doSend(msg);
+           });
+	        
+              $("#panel2_TL1_c").dblclick(function(event) {
+                   var colorShow = $("#panel2_TL1_popup input.background").val().colorDisplay(),
+                       bgColorShow = $("#panel2_TL1_popup input.background").val();
+                   $("#panel2_TL1_popup input.background").css({ 'color': colorShow, 'background': bgColorShow });
+                   $("#panel2_TL1_popup input.background").ColorPicker({
+                      onBeforeShow: function() { $(this).ColorPickerSetColor(this.value); },
+                      onChange: function(hsb, hex, rgb, el) {
+                          var fColor = "#" + hex;
+                          $(el).val(fColor);
+                          $(el).css({ 'background': fColor, 'color': fColor.colorDisplay()});
+                       },
+                      onSubmit: function(hsb, hex, rgb, el) {
+                          $(el).val("#" + hex);
+                          $(el).ColorPickerHide();
+                       },
+                   });
+                   $("#panel2_TL1_p h2 span").html("panel2_TL1");
+			       $("#panel2_TL1_popup input.idName").val("panel2_TL1");
+			       $("#panel2_TL1_c").blur();
+                   $('#panel2_TL1_popup, #fade, #panel2_TL1_p').css('display', 'block');
+                   var bval = $("#panel2_TL1_c").attr('style').replace(/:/g, ";").replace(/ /g, "").split(";");
+			       for (var i = 0; i < 8; i = i + 2) {
+                      var binputName = bval[i],
+                         binputVal = parseInt(bval[i + 1]);
+                      $('#panel2_TL1_popup input.' + binputName).val(binputVal);
+                   };				   
+                   $('#panel2_TL1_popup select.road1red option[value="1"]').attr("selected", true);
+				   $('#panel2_TL1_popup select.road1yellow option[value="1"]').attr("selected", true);
+				   $('#panel2_TL1_popup select.road1green option[value="1"]').attr("selected", true);
+				   $('#panel2_TL1_popup select.road2red option[value="1"]').attr("selected", true);
+				   $('#panel2_TL1_popup select.road2yellow option[value="1"]').attr("selected", true);
+				   $('#panel2_TL1_popup select.road2green option[value="1"]').attr("selected", true);
+               });
+			   $('#panel2_TL1_s').click(function(event) {
+                  var msg,
+			          newID = $('#panel2_TL1_popup input.idName').val(),
+                      pList = $("#panel2_TL1_popup form p [name]"),
+                      pBind = $("#panel2_TL1_popup form p select.bind");
+			      if (!idRule.test(newID) || newID == "panel2_TL1" ){ 
+			          msg = '<Request Action="WRITE"><PanelComponent id="panel2_TL1">' 
+			      }else{
+                      msg = '<Request Action="WRITE"><PanelComponent id="panel2_TL1"><PanelParameter Name="id"  Value="' + newID + '" Binding="" />'
+                   };
+                  for (var i = 0; i < pList.length; i++) {
+                      var inputName = $(pList[i]).attr('name'),
+                          inputValue = $(pList[i]).val(),
+                          bindValue = $(pBind[i]).val();
+                      if (inputValue) {
+                          msg += '<PanelParameter Name="' + inputName + '" Value="' + inputValue + '" Binding="' + bindValue + '" />';
+                          if (i < 5) {
+						     if(isNaN(inputValue)) $("#panel2_TL1_c").css(inputName, inputValue)
+						     else $("#panel2_TL1_c").css(inputName, inputValue + "px");
+						    };
+						  if (i >= 5 && i < pList.length - 2) {
+                              $("#panel2_TL1_c div.trafficlight span." + inputName).css('opacity', inputValue);
+                            };
+                          if (i >= pList.length - 2 && i < pList.length) {
+                              $("#panel2_TL1_c p span." + inputName).html(inputValue);
+                            };
+                       }
+                    };
+                    msg += '</PanelComponent></Request>';
+                    $('#panel2_TL1_popup, #fade, #panel2_TL1_p').css('display', 'none' );
+                    doSend(msg);
+               });
+	       
+        });
+    </script>
+</head>
+<body class='default'>
+<div id='panel2_c' class="drsElement drsMoveHandle" style=" top: 20px; left: 15px; width: 800px; height: 600px; background: transparent" >
+                     <div id='panel2_TL1_c' class="drsElement drsMoveHandle none" style="top: 40px; left: 12px; width: 800px; height: 600px; background: #ffffff" >
+                  <div class="mid-top" style="pointer-events: none;">
+                      <div class="mid-tm" style="pointer-events: none;">
+                          <div class="board fl board-top-left" style="pointer-events: none;">
+                             <p>
+							    <span class="road1time">0</span>
+                             </p>
+                          </div>
+                          <div class="trafficlight fl top-left trafficlight-h" style="pointer-events: none;">
+                              <span class="red span-h road1red"></span>
+                              <span class="orange span-h road1yellow"></span>
+                              <span class="green span-h road1green"></span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mid-mid" style="pointer-events: none;">
+                      <div class="mid-ml fl" style="pointer-events: none;">
+                           <div class="fl board-bot-left" style="pointer-events: none;">
+                              <p>
+                                <span class="road2time">0</span>
+                              </p>
+                           </div>
+                           <div class="trafficlight fl bot-left trafficlight-v" style="pointer-events: none;">
+                              <span class="red span-v road2red"></span>
+                              <span class="orange span-v road2yellow"></span>
+                              <span class="green span-v road2green"></span>
+                           </div>
+                      </div>
+                      <div class="mid-mm fl" style="pointer-events: none;"></div>
+                      <div class="mid-ml fl" style="pointer-events: none;">
+                          <div class="fr board-top-right" style="pointer-events: none;">
+                              <p>
+                                <span class="road2time">0</span>
+                              </p>
+                          </div>
+                          <div class="trafficlight fr top-right trafficlight-v" style="pointer-events: none;">
+                              <span class="red span-v road2red"></span>
+                              <span class="orange span-v road2yellow"></span>
+                              <span class="green span-v road2green"></span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="mid-top" style="pointer-events: none;">
+                      <div class="mid-tm">
+                          <div class="trafficlight fr bot-right trafficlight-h">
+                              <span class="red span-h road1red"></span>
+                              <span class="orange span-h road1yellow"></span>
+                              <span class="green span-h road1green"></span>
+                          </div>
+                          <div class="board fr board-bot-right" style="pointer-events: none;">
+                              <p>
+                                <span class="road1time">0</span>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+             </div>
+			 <div id="panel2_TL1_p" class="drsElement popup" style="position:absolute;top:100px;left:100px;">
+                  <img class="popupIco drsMoveHandle" width="70" height="70" src="../../../../Lib/styles/ico.png" alt="" />
+                  <a href="javascript:void(0)" onclick="$('#panel2_TL1_p, #panel2_TL1_popup, #fade').css('display', 'none');"><i class='fa fa-close fa-lg'></i></a>
+                  <h2>编辑样式:<span> </span></h2>
+                  <div id="panel2_TL1_popup" class="popup_content">
+                      <form action=" " method="post">
+                          <p>
+                             <label for="idName">控件名：</label>
+                             <input type="text" class="idName" />
+                             <select class="idBind">
+                                 <option value=" ">-- 绑定属性 --</option>
+
+                             </select>
+                          </p>
+				          <p>
+                             <label for="left">左边距：</label>
+                             <input type="number" min='0' class="left" name="left" />
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+                        
+                             </select>
+                          </p>
+                          <p>
+                             <label for="top">上边距：</label>
+                             <input type="number" min='0' class="top" name="top" />
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+                        
+                             </select>
+                          </p>
+				          <p>
+                             <label for="width">长度：</label>
+                             <input type="number" min='0' class="width" name="width" />
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+         
+                             </select>
+                          </p>
+                          <p>
+                             <label for="height">高度：</label>
+                             <input type="number" min='0' class="height" name="height" />
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+                        
+                             </select>
+                          </p>
+                          <p>
+                             <label for="background">背景颜色：</label>
+                             <input type="text" class="background" name="background" value="#ffffff" />
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+
+                             </select>
+                          </p>
+						  <p>
+                             <label for="road1red">横向红灯：</label>
+                             <select class="road1red" name="road1red">
+                                <option value="0.5">暗</option>
+                                <option value="1">亮</option>
+                             </select>
+                             <select class="bind">
+                                <option value=" ">-- 绑定属性 --</option>
+								
+                             </select>
+                          </p>
+                          <p>
+                             <label for="road1yellow">横向黄灯：</label>
+                             <select class="road1yellow" name="road1yellow">
+                               <option value="0.5">暗</option>
+                               <option value="1">亮</option>
+                             </select>
+                             <select class="bind">
+                              <option value=" ">-- 绑定属性 --</option>
+							  
+                             </select>
+                          </p>
+                          <p>
+                             <label for="road1green">横向绿灯：</label>
+                             <select class="road1green" name="road1green">
+                                 <option value="0.5">暗</option>
+                                 <option value="1">亮</option>
+                             </select>
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+								 
+                             </select>
+                          </p>
+                          <p>
+                             <label for="road2red">竖向红灯：</label>
+                             <select class="road2red" name="road2red">
+                                <option value="0.5">暗</option>
+                                <option value="1">亮</option>
+                             </select>
+                             <select class="bind">
+                               <option value=" ">-- 绑定属性 --</option>
+							   
+                             </select>
+                          </p>
+                          <p>
+                             <label for="road2yellow">竖向黄灯：</label>
+                             <select class="road2yellow" name="road2yellow">
+                                <option value="0.5">暗</option>
+                                <option value="1">亮</option>
+                             </select>
+                             <select class="bind">
+                               <option value=" ">-- 绑定属性 --</option>
+							   
+                             </select>
+                          </p>
+                          <p>
+                             <label for="road2green">竖向绿灯：</label>
+                             <select class="road2green" name="road2green">
+                                 <option value="0.5">暗</option>
+                                 <option value="1">亮</option>
+                             </select>
+                             <select class="bind">
+                                <option value=" ">-- 绑定属性 --</option>
+								
+                             </select>
+                          </p>
+                          <p>
+                             <label for="road1time">横向时间：</label>
+                             <input type="number" min='0' class="road1time" name="road1time" value="0" />
+                             <select class="bind">
+                                <option value=" ">-- 绑定属性 --</option>
+								
+                             </select>
+                          </p>
+                          <p>
+                             <label for="road2time">竖向时间：</label>
+                             <input type="number" min='0' class="road2time" name="road2time" value="0" />
+                             <select class="bind">
+                                <option value=" ">-- 绑定属性 --</option>
+								
+                             </select>
+                          </p>
+                      </form>
+                  </div>
+                  <div class="popup_btn">
+                      <span>点击保存修改样式</span>
+                      <input type="button" value="保存" id="panel2_TL1_s" class='popupOk' onclick=" " />
+                  </div>
+              </div>
+		   
+              </div>
+	          <div id="panel2_p" class="drsElement popup" style="position:absolute;top:100px;left:100px;">
+                  <img class="popupIco drsMoveHandle" width="70" height="70" src="../../../../Lib/styles/ico.png" alt="" />
+                  <a href="javascript:void(0)" onclick="$('#panel2_p, #panel2_popup, #fade').css('display', 'none');"><i class='fa fa-close fa-lg'></i></a>
+                  <h2>编辑样式:<span> </span></h2>
+                  <div id="panel2_popup" class="popup_content">
+                      <form action=" " method="post">
+                          <p>
+                             <label for="idName">面板名：</label>
+                             <input type="text" class="idName" />
+                             <select class="idBind">
+                                 <option value=" ">-- 绑定属性 --</option>
+
+                             </select>
+                          </p>
+				          <p>
+                             <label for="left">左边距：</label>
+                             <input type="number" min='0' class="left" name="left" />
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+                        
+                             </select>
+                          </p>
+                          <p>
+                             <label for="top">上边距：</label>
+                             <input type="number" min='0' class="top" name="top" />
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+                        
+                             </select>
+                          </p>
+				          <p>
+                             <label for="width">长度：</label>
+                             <input type="number" min='0' class="width" name="width" />
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+         
+                             </select>
+                          </p>
+                          <p>
+                             <label for="height">高度：</label>
+                             <input type="number" min='0' class="height" name="height" />
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+                        
+                             </select>
+                          </p>
+                          <p>
+                             <label for="background">背景颜色：</label>
+                             <input type="text" class="background" name="background" value="transparent" />
+                             <select class="bind">
+                                 <option value=" ">-- 绑定属性 --</option>
+
+                             </select>
+                          </p>
+                      </form>
+                  </div>
+                  <div class="popup_btn">
+                      <span>点击保存修改样式</span>
+                      <input type="button" value="保存" id="panel2_s" class='popupOk' onclick=" " />
+                  </div>
+              </div>	
+           
+<div id="fade" class="black_overlay"></div>
+</body>
+</html>
