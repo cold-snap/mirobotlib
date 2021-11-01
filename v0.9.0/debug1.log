@@ -1,0 +1,585 @@
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create FB:Dev1.RES1.App1.FB2 Type:TestMultiConv Resource:Dev1.RES1 Namespace:Test
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Creating Basic FB Type:TestMultiConv Instance:Dev1.RES1.App1.FB2 ID:1
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Var:port[0] ID:0 DataType:8 Value:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Input Event:REQ ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Association: REQ With port ID 0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Input Event:START ID:1
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Association: START With port ID 0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Output Event:CNF ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:REQ ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:S1 ID:1
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:S2 ID:2
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:S3 ID:3
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:START ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:REQ ID:1
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: REQ EO: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:STATE1 ID:2
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: S1 EO: CNF
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:STATE2 ID:3
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: S2 EO: CNF
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:STATE3 ID:4
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: S3 EO: CNF
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:STATE3 Destination:START Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:REQ Destination:STATE1 Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:REQ Destination:STATE2 Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:STATE1 Destination:START Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:STATE2 Destination:START Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:REQ Destination:STATE3 Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:START Destination:REQ Event:START
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: [createNewFBinRes] FB:Dev1.RES1.App1.FB2 Type:TestMultiConv Resource:Dev1.RES1 Namespace:Test
+
+<Response ID="400" Reason="RDY"><FB Name="Dev1.RES1.App1.FB2" ID="1" /></Response>
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create FB:Dev1.RES1.App1.FB3 Type:TestMultiConv Resource:Dev1.RES1 Namespace:Test
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Creating Basic FB Type:TestMultiConv Instance:Dev1.RES1.App1.FB3 ID:2
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Var:port[0] ID:0 DataType:8 Value:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Input Event:REQ ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Association: REQ With port ID 0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Input Event:START ID:1
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Association: START With port ID 0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Output Event:CNF ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:REQ ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:S1 ID:1
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:S2 ID:2
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:S3 ID:3
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:START ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:REQ ID:1
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: REQ EO: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:STATE1 ID:2
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: S1 EO: CNF
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:STATE2 ID:3
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: S2 EO: CNF
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:STATE3 ID:4
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: S3 EO: CNF
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:STATE3 Destination:START Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:REQ Destination:STATE1 Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:REQ Destination:STATE2 Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:STATE1 Destination:START Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:STATE2 Destination:START Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:REQ Destination:STATE3 Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:START Destination:REQ Event:START
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: [createNewFBinRes] FB:Dev1.RES1.App1.FB3 Type:TestMultiConv Resource:Dev1.RES1 Namespace:Test
+
+<Response ID="404" Reason="RDY"><FB Name="Dev1.RES1.App1.FB3" ID="2" /></Response>
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create FB:Dev1.RES1.App1.FB4 Type:TestMultiConv Resource:Dev1.RES1 Namespace:Test
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Creating Basic FB Type:TestMultiConv Instance:Dev1.RES1.App1.FB4 ID:3
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Var:port[0] ID:0 DataType:8 Value:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Input Event:REQ ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Association: REQ With port ID 0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Input Event:START ID:1
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Association: START With port ID 0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Output Event:CNF ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:REQ ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:S1 ID:1
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:S2 ID:2
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC Algorithm:S3 ID:3
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:START ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:REQ ID:1
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: REQ EO: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:STATE1 ID:2
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: S1 EO: CNF
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:STATE2 ID:3
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: S2 EO: CNF
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create EC State:STATE3 ID:4
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Actions: 
+
+Tue Oct 26 15:08:01 2021  [DEBUG]:  ALG: S3 EO: CNF
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:STATE3 Destination:START Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:REQ Destination:STATE1 Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:REQ Destination:STATE2 Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:STATE1 Destination:START Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:STATE2 Destination:START Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:REQ Destination:STATE3 Event:
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: EC Transition Source:START Destination:REQ Event:START
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: [createNewFBinRes] FB:Dev1.RES1.App1.FB4 Type:TestMultiConv Resource:Dev1.RES1 Namespace:Test
+
+<Response ID="408" Reason="RDY"><FB Name="Dev1.RES1.App1.FB4" ID="3" /></Response>
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create FB:Dev1.RES1.App1.FB6 Type:TestGPIO Resource:Dev1.RES1 Namespace:Test
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Creating SFB Type:TestGPIO Instance:Dev1.RES1.App1.FB6 ID:4
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Var:QI[0] ID:0 DataType:1 Value:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Var:QO[0] ID:0 DataType:1 Value:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Input Event:REQ ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Association: REQ With QI ID 0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Output Event:CNF ID:0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: Create Association: CNF With QO ID 0
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: [createNewFBinRes] FB:Dev1.RES1.App1.FB6 Type:TestGPIO Resource:Dev1.RES1 Namespace:Test
+
+<Response ID="412" Reason="RDY"><FB Name="Dev1.RES1.App1.FB6" ID="4" /></Response>
+Tue Oct 26 15:08:01 2021  [DEBUG]: Dev1.RES1 App1.FB4.CNF To Dev1.RES1 App1.FB6.REQ
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: [createEventConnectioninRes] Creating Event Connection From:App1.FB4.CNF To:App1.FB6.REQ
+
+Tue Oct 26 15:08:01 2021  [DEBUG]: [createEventConnectioninRes] Set Event Connection Index From: 1/2/0 To:8/0/0
+
+<Response ID="415" Reason="RDY"></Response>
+Tue Oct 26 15:08:01 2021  [DEBUG]: [startResExecution] Start Running Resource Dev1.RES1 Status:0
+
+Tue Oct 26 15:08:01 2021  [ALWAYS]: [FBSRT Boot] Starting Resource Dev1.RES1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [serviceDataTransfer] received 112 bytes
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [serviceDataTransfer] received message Dev1.RES1.App1.FB3.START/Dev1.RES1.App1.FB4.port[0]:1;Dev1.RES1.App1.FB3.port[0]:2;Dev1.RES1.App1.FB2.port[0]:3;
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Resource:0 FB Type:TestMultiConv(1) Index:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var:Dev1.RES1.App1.FB4.port Offset:0 Value:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:2 Name:Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:2 Name:Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Variable FB Type:TestMultiConv(1) Index:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var ID:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var Data Type:8
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var:Dev1.RES1.App1.FB3.port Offset:0 Value:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Variable FB Type:TestMultiConv(1) Index:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var ID:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var Data Type:8
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var:Dev1.RES1.App1.FB2.port Offset:0 Value:3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Variable FB Type:TestMultiConv(1) Index:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var ID:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var Data Type:8
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [serviceDataTransfer] received 112 bytes
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB3/Type:TestMultiConv/Event:START/EventType:Input
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [serviceDataTransfer] received message Dev1.RES1.App1.FB2.START/Dev1.RES1.App1.FB4.port[0]:1;Dev1.RES1.App1.FB3.port[0]:2;Dev1.RES1.App1.FB2.port[0]:3;
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [sampleInput]Item:Data/Type:Input/Name:port/Value:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [TRACE]: [BFB sampleInput]Item:Data/Type:Input/Name:port/Value:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: EC State:START Event:START
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [TestMultiConv] Checking EC Transition  Source:START With Event: START In Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Resource:0 FB Type:TestMultiConv(1) Index:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var:Dev1.RES1.App1.FB4.port Offset:0 Value:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:2 Name:Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:2 Name:Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Variable FB Type:TestMultiConv(1) Index:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var ID:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:START Event:START BFB Index:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var Data Type:8
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECALGFunction] Calling Index:1 algid:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var:Dev1.RES1.App1.FB3.port Offset:0 Value:2
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB3/Type:TestMultiConv/ECState:REQ
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Checking Further EC Transition  Source:REQ In Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:REQ Event: BFB Index:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECALGFunction] Calling Index:1 algid:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB3/Type:TestMultiConv/Event:CNF/EventType:Output
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB3/Type:TestMultiConv/ECState:STATE2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Variable FB Type:TestMultiConv(1) Index:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Checking Further EC Transition  Source:STATE2 In Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var ID:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:STATE2 Event: BFB Index:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var Data Type:8
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var:Dev1.RES1.App1.FB2.port Offset:0 Value:3
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB3/Type:TestMultiConv/ECState:START
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Checking Further EC Transition  Source:START In Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:START Event: BFB Index:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: RunResNetwork Event:0 FB:1 Type:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Next Event: -1 From FB: -1(Type - -1)
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Variable FB Type:TestMultiConv(1) Index:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var ID:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var Data Type:8
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [serviceDataTransfer] received 112 bytes
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB2/Type:TestMultiConv/Event:START/EventType:Input
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [serviceDataTransfer] received message Dev1.RES1.App1.FB4.START/Dev1.RES1.App1.FB4.port[0]:1;Dev1.RES1.App1.FB3.port[0]:2;Dev1.RES1.App1.FB2.port[0]:3;
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [sampleInput]Item:Data/Type:Input/Name:port/Value:3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [TRACE]: [BFB sampleInput]Item:Data/Type:Input/Name:port/Value:3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: EC State:START Event:START
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:2 Name:Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [TestMultiConv] Checking EC Transition  Source:START With Event: START In Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:START Event:START BFB Index:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:2 Name:Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECALGFunction] Calling Index:0 algid:0
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB2/Type:TestMultiConv/ECState:REQ
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Checking Further EC Transition  Source:REQ In Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:REQ Event: BFB Index:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECALGFunction] Calling Index:0 algid:3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Resource:0 FB Type:TestMultiConv(1) Index:2
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB2/Type:TestMultiConv/Event:CNF/EventType:Output
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var:Dev1.RES1.App1.FB4.port Offset:0 Value:1
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB2/Type:TestMultiConv/ECState:STATE3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Checking Further EC Transition  Source:STATE3 In Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:STATE3 Event: BFB Index:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:2 Name:Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB2/Type:TestMultiConv/ECState:START
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Checking Further EC Transition  Source:START In Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:START Event: BFB Index:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:2 Name:Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: RunResNetwork Event:0 FB:0 Type:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Next Event: -1 From FB: -1(Type - -1)
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Variable FB Type:TestMultiConv(1) Index:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var ID:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var Data Type:8
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var:Dev1.RES1.App1.FB3.port Offset:0 Value:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:1 Name:Dev1.RES1.App1.FB3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Variable FB Type:TestMultiConv(1) Index:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var ID:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var Data Type:8
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var:Dev1.RES1.App1.FB2.port Offset:0 Value:3
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: i:0 Name:Dev1.RES1.App1.FB2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Variable FB Type:TestMultiConv(1) Index:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var ID:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [processUDPMessage] Var Data Type:8
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB4/Type:TestMultiConv/Event:START/EventType:Input
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [sampleInput]Item:Data/Type:Input/Name:port/Value:1
+
+Tue Oct 26 15:08:07 2021  [TRACE]: [BFB sampleInput]Item:Data/Type:Input/Name:port/Value:1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: EC State:START Event:START
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [TestMultiConv] Checking EC Transition  Source:START With Event: START In Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:START Event:START BFB Index:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECALGFunction] Calling Index:2 algid:0
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB4/Type:TestMultiConv/ECState:REQ
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Checking Further EC Transition  Source:REQ In Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:REQ Event: BFB Index:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECALGFunction] Calling Index:2 algid:1
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB4/Type:TestMultiConv/Event:CNF/EventType:Output
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB4/Type:TestMultiConv/ECState:STATE1
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Checking Further EC Transition  Source:STATE1 In Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:STATE1 Event: BFB Index:2
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:BFB/Name:Dev1.RES1.App1.FB4/Type:TestMultiConv/ECState:START
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Checking Further EC Transition  Source:START In Dev1.RES1.App1.FB4
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeECTranCondFunction] Source:START Event: BFB Index:2
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: RunResNetwork Event:0 FB:2 Type:1
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:EventConnection/Type:Resource/Name:Dev1.RES1/From:Dev1.RES1.App1.FB4.CNF/To:Dev1.RES1.App1.FB6.REQ
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:SFB/Name:Dev1.RES1.App1.FB6/Type:TestGPIO/Event:REQ/EventType:Input
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:Data/Type:Input/Name:QI/Value:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [ExecuteSFBALG] From FB event index 0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [ExecuteSFBALG] From FB Time Now:1635260887057
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeSFBALGFunction] Calling Index:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [invokeSFBALGFunction] Calling completed
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: [ExecuteSFBALG] Interval Var Array Size:0
+
+Tue Oct 26 15:08:07 2021  [TRACE]: Item:SFB/Name:Dev1.RES1.App1.FB6/Type:TestGPIO/Event:CNF/EventType:Output
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Item:Data/Type:Output/Name:QO/Value:0
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Next Event: 0 From FB: 0(Type - 8)
+
+Tue Oct 26 15:08:07 2021  [DEBUG]: Next Event: -1 From FB: -1(Type - -1)
+
+Tue Oct 26 15:08:13 2021  [DEBUG]: [killResExecution] Kill Running Resource Dev1.RES1
+
+Tue Oct 26 15:08:13 2021  [DEBUG]: [killResExecution] Kill Running Resource 
+
+Tue Oct 26 15:08:13 2021  [DEBUG]: [killResExecution] Kill Running Resource 
+
+Tue Oct 26 15:08:13 2021  [DEBUG]: [killResExecution] Kill Running Resource 
+
+Tue Oct 26 15:08:13 2021  [DEBUG]: [killResExecution] Kill Running Resource 
+
+Tue Oct 26 15:08:13 2021  [DEBUG]: [killResExecution] Kill Running Resource 
+
+Tue Oct 26 15:08:13 2021  [DEBUG]: [killResExecution] Kill Running Resource 
+
+Tue Oct 26 15:08:13 2021  [DEBUG]: [killResExecution] Kill Running Resource 
+
+Tue Oct 26 15:08:13 2021  [DEBUG]: [killResExecution] Kill Running Resource 
+
+Tue Oct 26 15:08:13 2021  [DEBUG]: [killResExecution] Kill Running Resource 
+
